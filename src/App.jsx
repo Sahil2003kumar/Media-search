@@ -15,7 +15,7 @@ const App = () => {
       <button onClick={async ()=>{
        const data = await fetchVideos('dog')
 
-       console.log(data.results)
+       console.log(data.videos)
       }} className='bg-yellow-300 border rounded px-6'>Get Video</button>
     </div>
   )
