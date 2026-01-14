@@ -16,3 +16,4 @@ const PEXELS_KEY = import.meta.env.VITE_PEXELS_KEY
   return res.data
 }
 
+//this function used for to fetch the video
