@@ -25,3 +25,5 @@ export async function fetchVideos(query,  per_page=15){
    })
    return res.data
 }
+
+// function for GIF
