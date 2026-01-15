@@ -1,16 +1,38 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { setQuery } from '../redux/features/searchSlice'
 
 const SearchBar = () => {
     const [text, setText] = useState('')
+
+const dispatch = useDispatch()
+
+    const submitHandler = (e)=>{
+        e.preventDefault()
+        console.log(text)
+
+       dispatch(setQuery(text))
+       setText('')
+
+    }
   return (
     <div>
-        <form className='flex gap-5 p-10'> 
+        <form 
+        onSubmit={(e)=>{
+           submitHandler(e) 
+        }}
+        className='flex gap-5 p-10 bg-zinc-700 px-14'> 
             <input
-             className='border-2 px-4 py-2 text-xl rounded outline-none'
+            value={text}
+            onChange={(e)=>{
+                setText(e.target.value)
+            }}
+            required
+             className=' w-full border-2 px-4 py-2 text-xl rounded outline-none'
              type="text"  
              placeholder='Search Anything....'/>
 
-            <button className='border-2 px-4 py-2 text-xl rounded outline-none'> Search</button>
+            <button className='active:scale-95 cursor-pointer border-2 px-4 py-2 text-xl rounded outline-none hover:bg-green-500 hover'> Search</button>
         </form>
     </div>
   )
