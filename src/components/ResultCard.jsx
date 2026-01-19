@@ -1,5 +1,7 @@
 import React from 'react'
 
+
+//card
 const ResultCard = ({item}) => {
   return (
     <div className='w-[18vw] relative h-70  rounded'>
