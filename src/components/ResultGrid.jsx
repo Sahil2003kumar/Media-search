@@ -29,7 +29,8 @@ const ResultGrid = () => {
                         type: 'photo',
                         title: item.alt_description,
                         thumbnail: item.urls.small,
-                        src: item.urls.full
+                        src: item.urls.full,
+                        url:item.links.html
                     }))
                 }
                 if (activeTab == 'video') {
@@ -39,27 +40,29 @@ const ResultGrid = () => {
                         type: 'video',
                         title: item.user.name || 'video',
                         thumbnail: item.image,
-                        src: item.video_files[0].link
+                        src: item.video_files[0].link,
+                        url:item.url
                     }))
                 }
 
                 dispatch(setResults(data))
             } catch (error) {
+                console.log(error)
                 dispatch(setError(error.message))
             }
         }
 
         getData()
-    }, [query, activeTab])
+    }, [query, activeTab, dispatch])
 
     if (error) return <h1>Error</h1>
     if (loading) return <h1>Loading...</h1>
     return (
-        <div className='flex h-[85%] justify-center flex-wrap gap-5 overflow-auto px-10 '> 
+        <div className='flex h-[85%] w-full justify-center flex-wrap gap-5 overflow-auto px-10 '> 
 
             {results.map((item, idx) => {
                 return <div key={idx}>
-                    <ResultCard item={item}/>
+                   <ResultCard item={item}/>
                 </div>
             })}
         </div>
