@@ -9,7 +9,6 @@ const dispatch = useDispatch()
 
     const submitHandler = (e)=>{
         e.preventDefault()
-        console.log(text)
 
        dispatch(setQuery(text))
        setText('')
