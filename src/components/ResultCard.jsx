@@ -9,7 +9,7 @@ const ResultCard = ({item}) => {
        </a>
         <div id='bottom' className=' flex justify-between w-full px-1 py-10 items-center absolute bottom-0 text-white'>
             <h2 className='text-sm font-semibold capitalize'>{item.title}</h2>
-            <button className='bg-lime-500 cursor-pointer text-white rounded px-3 py-1 font-medium'>Save</button>
+            <button className='bg-lime-500 cursor-pointer active:scale-95 text-white rounded px-3 py-1 font-medium'>Save</button>
         </div>
     </div>
   )
