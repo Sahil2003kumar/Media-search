@@ -32,3 +32,5 @@ dispatch(addedToast())
 }
 
 export default ResultCard
+
+//..
