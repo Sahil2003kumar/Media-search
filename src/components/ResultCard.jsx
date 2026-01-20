@@ -1,18 +1,18 @@
 import React from 'react'
-
- const addToCollection = (item) =>{
-  const oldData = JSON.parse(localStorage.getItem('collection')) || []
-
-  const newData = [...oldData, item]
-
-  localStorage.setItem('collection',JSON.stringify(newData))
-
-  
- }
-
+import { useDispatch } from 'react-redux'
+import { addCollection, addedToast } from '../redux/features/collectionSlice'
 
 //card
 const ResultCard = ({item}) => {
+
+  const dispatch = useDispatch()
+
+   const addToCollection = (item) =>{
+    console.log(item)
+dispatch(addCollection(item))
+dispatch(addedToast())
+  
+ }
   return (
     <div className='w-[18vw] relative h-70  rounded'>
       <a target='_blank'className='h-full' href={item.url}>
