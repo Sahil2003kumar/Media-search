@@ -52,7 +52,8 @@ const collectionSlice = createSlice({
                 theme: "dark",
                 transition: Zoom,
             })
-        }
+        },
+    
     }
 })
 
