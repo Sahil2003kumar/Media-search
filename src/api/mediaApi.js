@@ -30,3 +30,5 @@ export async function fetchVideos(query, per_page = 15) {
 }
 
 // function for GIF
+// write the your own function 
+
